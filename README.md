@@ -7,7 +7,7 @@ Sometimes you want to apply cooldowns to more than just commands.  The actions i
 
 ## Installation
 
-* Click on [ActionCooldown.sb](https://raw.githubusercontent.com/WhazzItToYa/Streamerbot-CooldownUtilities/refs/heads/main/ActionCooldown.sb) and (import it into Streamer.bot)[https://docs.streamer.bot/guide/import-export#import] as usual.
+* Click on [ActionCooldown.sb](https://raw.githubusercontent.com/WhazzItToYa/Streamerbot-CooldownUtilities/refs/heads/main/ActionCooldown.sb) and [import it into Streamer.bot](https://docs.streamer.bot/guide/import-export#import) as usual.
 
 ## Usage
 
