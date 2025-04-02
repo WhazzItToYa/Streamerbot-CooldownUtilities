@@ -1,9 +1,10 @@
 # Custom Cooldown Utilities for Streamer.bot
 
-Sometimes you want to apply cooldowns to more than just commands.  The actions in this import implement cooldowns for other types of situations:
+Sometimes you want to apply cooldowns to more than just commands, or have more control over exactly what happens when something is on cooldown.  The actions in this import let you apply cooldowns within your own actions:
 * Cooldowns on running an action, global and per-user.
 * Cooldowns on user-defined labels, global and per-user.
   * For example, if there are multiple actions that you want participating in the same cooldown, then you can give them a common group name that the cooldown will apply to.
+* Instead of silently aborting the action, send a "On cooldown" message to chat. 
 
 ## Installation
 
