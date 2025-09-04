@@ -105,6 +105,7 @@ public class CPHInline
             case "trovo":   return CPH.GetTrovoUserVar<long>(userName, varName, persisted);
             case "youtube": return CPH.GetYouTubeUserVar<long>(userName, varName, persisted);
             case "twitch":  return CPH.GetTwitchUserVar<long>(userName, varName, persisted);
+            case "kick":  return CPH.GetKickUserVar<long>(userName, varName, persisted);
         }
         return 0;
     }
@@ -116,6 +117,7 @@ public class CPHInline
             case "trovo":   CPH.SetTrovoUserVar(userName, varName, value, persisted); break;
             case "youtube": CPH.SetYouTubeUserVar(userName, varName, value, persisted); break;
             case "twitch":  CPH.SetTwitchUserVar(userName, varName, value, persisted); break;
+            case "kick":  CPH.SetKickUserVar(userName, varName, value, persisted); break;
         }
     }
 }
