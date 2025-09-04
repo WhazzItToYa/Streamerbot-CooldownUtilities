@@ -8,7 +8,7 @@ Sometimes you want to apply cooldowns to more than just commands, or have more c
 
 ## Requirements
 
-This latest version only supports Streamer.bot 1.0.0 or higher. [Click Here](https://github.com/WhazzItToYa/Streamerbot-CooldownUtilities/tree/35ca6e6cfd98a2cac7a0f2dc343df78c93c27570) the last version which supported 0.2.8.
+This version only supports Streamer.bot 1.0.0 or higher. [Click Here](https://github.com/WhazzItToYa/Streamerbot-CooldownUtilities/tree/35ca6e6cfd98a2cac7a0f2dc343df78c93c27570) for the last version which supported 0.2.8.
 
 ## Installation
 
@@ -39,3 +39,4 @@ This cooldown applies only to the initial action invoked by a trigger.  If you p
 Cooldowns longer than 5 minutes will be persisted, so that if Streamer.bot crashes or is closed, cooldowns started before the shutdown will still be honored.
 
 User cooldowns can only be applied to actions that set the `%userName%` & `%userType%` arguments.  It should work for Twitch, Trovo, Kick, and YouTube, but has only been tested on Twitch.  Please let me know if it does or doesn't work on the other platforms.
+
