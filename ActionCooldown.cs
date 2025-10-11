@@ -63,20 +63,27 @@ public class CPHInline
             if (!CPH.TryGetArg("actionCooldownSecs", out cooldown)) cooldown = 10;
         }
 
+    	if (!CPH.TryGetArg("cooldownBehavior", out string behavior)) behavior = "break";
+
     	// If we have to keep track of cooldowns for an extended time, persist them in case
     	// we get restarted in the meantime.
-    	var varName = $"lastExecuted-{keyName}";
-    	bool persistCooldown = (cooldown > 300);
-    	long lastExecuted = getter(varName, persistCooldown);
-        long elapsed = now-lastExecuted;
-    	if (elapsed >= cooldown) {
+    	var varName = $"cooldownUntil-{keyName}";
+    	bool persistCooldown = (cooldown > 60);
+    	long cooldownUntil = getter(varName, true);
+        long remaining = cooldownUntil - now;
+
+        // Action is not currently in cooldown. Start the cooldown.
+    	if (remaining <= 0) {
             CPH.SetArgument("cooldownRemaining", 0);
-            setter(varName, now, persistCooldown);
+            if (behavior != "check") {
+                setter(varName, now + cooldown, true);
+            }
             return true;
         }
-        CPH.SetArgument("cooldownRemaining", cooldown-elapsed);
 
-    	CPH.TryGetArg("cooldownBehavior", out string behavior);
+        // Action *is* in cooldown.
+        CPH.SetArgument("cooldownRemaining", remaining);
+
         switch (behavior) {
             case "continue":
                 return true;

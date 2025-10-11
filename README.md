@@ -20,8 +20,9 @@ There are a number of arguments that control the behavior of the cooldown that y
 * `cooldownSecs`: (optional) the number of seconds of cooldown.  The default is 10 seconds if not supplied.
 * `cooldownGroup`: (required if using one of the Group cooldowns)  The common group name for all the actions that will share the same cooldown.
 * `cooldownBehavior`: (optional) Specifies what to do if the action is on cooldown.
-  * "break" : (the default) abort the action.
-  * "continue" : continue executing the action, and set the argument `cooldownRemaining` to the number of seconds remaining in the cooldown. 0 means that the action was not in cooldown (but it is now).
+  * `break` : (the default) abort the action.
+  * `continue` : continue executing the action, and set the argument `cooldownRemaining` to the number of seconds remaining in the cooldown. 0 means that the action was not in cooldown (but it is now).
+  * `check` : Only checks if the cooldown is currently in effect, without triggering it. Sets `cooldownRemaining` just as with the "continue" option.
 
 Then use Run Action (run immedately = checked) to run one of the following actions, depending on the type of cooldown you want:
 * "Apply Action Cooldown" for a global cooldown on the running action.
