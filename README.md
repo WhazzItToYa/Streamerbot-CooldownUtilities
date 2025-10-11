@@ -37,7 +37,7 @@ It is only accurate down to 1 second.  E.g., if you set the cooldown to 5 second
 
 This cooldown applies only to the initial action invoked by a trigger.  If you place this in a secondary action invoked by the initial action, the cooldown will only apply to that initial action.
 
-Cooldowns longer than 5 minutes will be persisted, so that if Streamer.bot crashes or is closed, cooldowns started before the shutdown will still be honored.
+All cooldowns are persisted, so that if Streamer.bot crashes or is closed, cooldowns started before the crash will still be in effect.
 
 User cooldowns can only be applied to actions that set the `%userName%` & `%userType%` arguments.  It should work for Twitch, Trovo, Kick, and YouTube, but has only been tested on Twitch.  Please let me know if it does or doesn't work on the other platforms.
 

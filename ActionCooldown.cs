@@ -68,7 +68,6 @@ public class CPHInline
     	// If we have to keep track of cooldowns for an extended time, persist them in case
     	// we get restarted in the meantime.
     	var varName = $"cooldownUntil-{keyName}";
-    	bool persistCooldown = (cooldown > 60);
     	long cooldownUntil = getter(varName, true);
         long remaining = cooldownUntil - now;
 
