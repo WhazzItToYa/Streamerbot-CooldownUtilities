@@ -71,6 +71,7 @@ public class CPHInline
     	long cooldownUntil = getter(varName, true);
         long remaining = cooldownUntil - now;
 
+        // CPH.LogDebug($"varName: '{varName}'  until: '{cooldownUntil}' remaining: '{remaining}'");
         // Action is not currently in cooldown. Start the cooldown.
     	if (remaining <= 0) {
             CPH.SetArgument("cooldownRemaining", 0);
@@ -85,6 +86,7 @@ public class CPHInline
 
         switch (behavior) {
             case "continue":
+            case "check" :
                 return true;
             case "break":
             default:
